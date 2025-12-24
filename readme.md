@@ -12,6 +12,8 @@ The logic in `gfx.h` doesn't care about what kind of renderer it's hooked up to
 
 # API
 
+Include in order:
+
 ## gfx.h
 ```c
 // Functions
@@ -40,6 +42,29 @@ gfx_texture     unsigned short width; unsigned short height; gfx_color * data;
 // 16.16 Fixed-Point Conversion
 gfx_vec2_float      unsigned int
 gfx_defloat_vec2    unsigned int
+```
+
+## window.h
+
+Make sure to define the Window Event Handler `WINDOW->handler` after initialization and before calling the eventloop
+
+```c
+// Options
+#define WINDOW_DISABLE_CONTROLLERS
+
+// Functions
+int     window_init         (WINDOW *window, void * pixelbuffer, int w, int h, const char *title);
+void    window_size         (WINDOW *window, int *w, int *h);
+void    window_shutdown     (WINDOW *window);
+void    window_present      (WINDOW *window);
+void    window_clear        (WINDOW *window, uint8_t r, uint8_t g, uint8_t b, uint8_t a);
+EVENT   window_poll         (WINDOW *window);
+EVENT   window_eventloop    (WINDOW *window);
+
+// Typedefs
+EVENT_HANDLER   void (EVENT *);
+EVENT           short type, short x, short y, short c
+WINDOW          int w, h, unsigned int *pixels, SDL_Window *, SDL_Renderer *, SDL_Texture *, EVENT_HANDLER handler
 ```
 
 ## font.h
