@@ -1,21 +1,11 @@
-We need a lightweight library that does all the following;
+Dependencies
 
-- Framebuffer graphics with primitives
-    - Triangles
-    - Squares
-    - Circles
-    - Precompiled character glyphs
+**SDL2**
+- Gives us our framebuffer
+- Handles basic Window IO and window events 
 
-- Support for 2D and 3D Translations
-    - Rotation (X, Y, Z)
-    - Translation
-    - Skew
+**SDL2Image**
+- Gives us image blip and loading
 
-Things the library does *not* do;
-- *Deciding* what does or does not get drawn,
-- Load models, backface cull, et cetera
-
-and it externally needs;
-
-- A library that can handle Window creation and giving a buffer/texture to write,
-- Wrapper functions passed back to the lib which let it signal the buffer is ready for display
+Both could be replaced, but seems unnecessary for now.
+The logic in `gfx.h` doesn't care about what kind of renderer it's hooked up to
