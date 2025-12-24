@@ -4,7 +4,6 @@
 #include <sys/stat.h>
 #include "gfx.h"
 #include "window.h"
-#include "image.h"
 #include "font.h"
 
 #define framebuffer_width   1920

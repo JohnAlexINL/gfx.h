@@ -8,6 +8,7 @@ typedef struct { SDL_Texture *texture; SDL_Renderer *renderer; int width; int he
 
 font_t *font_load       (font_t *self, SDL_Renderer * renderer, const char *filename);
 void font_putc          (font_t *font, char character, int x, int y);
+void font_puts          (font_t *font, char * stream, int x, int y);
 
 font_t *font_load       (font_t *self, SDL_Renderer * renderer, const char *filename)
 {
