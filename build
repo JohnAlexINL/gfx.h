@@ -1,0 +1,3 @@
+#!/bin/sh
+compiler=gcc
+$compiler -o main main.c -lm -lSDL2 -lSDL2_image
